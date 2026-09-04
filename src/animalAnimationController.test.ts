@@ -58,8 +58,8 @@ describe("animal animation controller", () => {
     expect(spine.state.data.defaultMix).toBe(0.18);
     expect(spine.state.data.mixes.get("idle->walk")).toBe(0.2);
     expect(spine.state.data.mixes.get("walk->idle")).toBe(0.2);
-    expect(spine.state.data.mixes.get("walk->run")).toBe(0.15);
-    expect(spine.state.data.mixes.get("run->walk")).toBe(0.15);
+    expect(spine.state.data.mixes.get("idle->select")).toBe(0.15);
+    expect(spine.state.data.mixes.get("select->idle")).toBe(0.15);
     expect(spine.state.calls).toEqual(["set:0:idle:true"]);
   });
 
@@ -88,7 +88,7 @@ describe("animal animation controller", () => {
 
     expect(spine.state.calls).toEqual([
       "set:0:idle:true",
-      "set:1:talk_scream:true",
+      "set:1:scream:true",
       "empty:1:0.18",
     ]);
   });
@@ -107,7 +107,7 @@ describe("animal animation controller", () => {
 
     expect(spine.state.calls).toEqual([
       "set:0:idle:true",
-      "set:2:selected:true",
+      "set:2:select:true",
       "empty:2:0.15",
       "clear-all",
     ]);
@@ -118,12 +118,12 @@ describe("animal animation controller", () => {
     const controller = new AnimalAnimationController(spine);
 
     controller.setFacingDirection(-1);
-    expect(spine.scale.x).toBe(-1);
+    expect(spine.scale.x).toBe(-0.5);
 
     controller.setFacingDirection(0);
-    expect(spine.scale.x).toBe(-1);
+    expect(spine.scale.x).toBe(-0.5);
 
     controller.setFacingDirection(1);
-    expect(spine.scale.x).toBe(1);
+    expect(spine.scale.x).toBe(0.5);
   });
 });

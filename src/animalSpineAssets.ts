@@ -10,11 +10,15 @@ export type AnimalSpineAssetDefinition = {
   readonly scale: number;
 };
 
+function publicAssetPath(path: string): string {
+  return `${import.meta.env.BASE_URL}${path.replace(/^\/+/, "")}`;
+}
+
 export const cowSpineAsset: AnimalSpineAssetDefinition = {
   skeletonAlias: "animal-spine-cow-skeleton",
-  skeletonSrc: "/assets/spine/cow/mooglow.json",
+  skeletonSrc: publicAssetPath("assets/spine/cow/mooglow.json"),
   atlasAlias: "animal-spine-cow-atlas",
-  atlasSrc: "/assets/spine/cow/mooglow.atlas",
+  atlasSrc: publicAssetPath("assets/spine/cow/mooglow.atlas"),
   scale: 0.18,
 };
 

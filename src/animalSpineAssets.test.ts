@@ -14,10 +14,10 @@ describe("animal Spine assets", () => {
     for (const animalType of ANIMAL_TYPES) {
       expect(getAnimalSpineAsset(animalType)).toBe(cowAsset);
       expect(animalAssets[animalType].skeletonSrc).toBe(
-        "/assets/spine/cow/cow.json",
+        `${import.meta.env.BASE_URL}assets/spine/cow/mooglow.json`,
       );
       expect(animalAssets[animalType].atlasSrc).toBe(
-        "/assets/spine/cow/cow.atlas",
+        `${import.meta.env.BASE_URL}assets/spine/cow/mooglow.atlas`,
       );
     }
   });
