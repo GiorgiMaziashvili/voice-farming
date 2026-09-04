@@ -44,7 +44,7 @@ class FakeAnimationState implements AnimationStateLike {
 
 function createFakeSpine() {
   return {
-    scale: { x: 1 },
+    scale: { x: 1, y: 1 },
     state: new FakeAnimationState(),
   };
 }
