@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css" />
+    <title>PixiJS - Template</title>
+  </head>
+
+  <body>
+    <div id="app">
+      <div id="game-ui">
+        <button id="add-animal-button" type="button">+ Add Animal</button>
+        <div
+          id="animal-popup"
+          class="hidden"
+          role="dialog"
+          aria-label="Choose animal"
+        >
+          <button type="button" data-animal="Cow">Cow</button>
+          <button type="button" data-animal="Sheep">Sheep</button>
+          <button type="button" data-animal="Pig">Pig</button>
+          <button type="button" data-animal="Chicken">Chicken</button>
+        </div>
+        <div
+          id="animal-modal"
+          class="hidden"
+          role="dialog"
+          aria-labelledby="animal-modal-title"
+        >
+          <h2 id="animal-modal-title"></h2>
+          <p id="animal-voice-status"></p>
+          <p id="animal-recording-time" class="hidden"></p>
+          <div class="animal-modal-actions">
+            <button id="record-voice-button" type="button">Record Voice</button>
+            <button id="stop-recording-button" class="hidden" type="button">
+              Stop Recording
+            </button>
+            <button id="preview-voice-button" class="hidden" type="button">
+              Preview
+            </button>
+            <button id="rerecord-voice-button" class="hidden" type="button">
+              Re-record
+            </button>
+            <button id="delete-recording-button" class="hidden" type="button">
+              Delete Recording
+            </button>
+            <button id="remove-animal-modal-button" type="button">
+              Remove Animal
+            </button>
+            <button id="close-animal-modal-button" type="button">Close</button>
+          </div>
+        </div>
+      </div>
+      <div id="pixi-container"></div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

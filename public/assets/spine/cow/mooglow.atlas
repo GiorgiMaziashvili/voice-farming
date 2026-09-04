@@ -1,0 +1,12 @@
+mooglow.png
+size: 4096, 2048
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+pma: false
+cow-normal
+  bounds: 0, 0, 1203, 1307
+cow-scream
+  bounds: 1203, 0, 1203, 1307
+selection-effects
+  bounds: 2406, 0, 1203, 1307
